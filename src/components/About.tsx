@@ -16,13 +16,13 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-konet-blue mb-6">
-              Transforming Ideas Into Digital Excellence
+              Building Excellence Into Every Structure
             </h2>
             <p className="text-lg text-konet-gray mb-6">
-              At KONET, we believe every vision deserves to become reality. Founded on the principle of turning ambitious ideas into groundbreaking digital solutions, we've been at the forefront of technological innovation.
+              At KONET, we believe every vision deserves to become reality. Founded on the principle of turning architectural dreams into exceptional structures, we've been at the forefront of construction innovation in Rwanda.
             </p>
             <p className="text-lg text-konet-gray mb-8">
-              Our team of expert developers, designers, and strategists work tirelessly to deliver solutions that not only meet your current needs but anticipate future challenges. We don't just build technology; we build the future.
+              Our team of expert builders, engineers, and craftsmen work tirelessly to deliver projects that not only meet your current needs but stand strong for generations. We don't just build structures; we build legacies.
             </p>
             <Button variant="primary" size="lg">
               Learn More About Us

@@ -17,7 +17,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-white/80 mb-4 max-w-md">
-              Transforming ambitious ideas into groundbreaking digital solutions. Your trusted technology partner for innovation and growth.
+              Transforming architectural visions into exceptional structures. Your trusted construction partner for building dreams into reality.
             </p>
           </div>
           

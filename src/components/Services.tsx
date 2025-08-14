@@ -1,43 +1,43 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
-  Code2, 
-  Smartphone, 
-  Cloud, 
-  Database, 
-  Zap, 
-  Shield 
+  Building2, 
+  Hammer, 
+  HardHat, 
+  Truck, 
+  PaintBucket, 
+  Wrench 
 } from "lucide-react";
 
 const services = [
   {
-    icon: Code2,
-    title: "Web Development",
-    description: "Custom web applications built with cutting-edge technologies for optimal performance and user experience."
+    icon: Building2,
+    title: "Residential Construction",
+    description: "Custom homes and residential complexes built with precision, quality materials, and attention to detail."
   },
   {
-    icon: Smartphone,
-    title: "Mobile Solutions",
-    description: "Native and cross-platform mobile applications that engage users and drive business growth."
+    icon: HardHat,
+    title: "Commercial Projects",
+    description: "Office buildings, retail spaces, and industrial facilities designed for functionality and durability."
   },
   {
-    icon: Cloud,
-    title: "Cloud Services",
-    description: "Scalable cloud infrastructure and migration services to modernize your business operations."
+    icon: Hammer,
+    title: "Renovation & Remodeling",
+    description: "Transform existing spaces with modern designs while preserving structural integrity and character."
   },
   {
-    icon: Database,
-    title: "Data Analytics",
-    description: "Transform raw data into actionable insights with our advanced analytics and visualization solutions."
+    icon: Truck,
+    title: "Infrastructure Development",
+    description: "Roads, bridges, and utility installations that form the backbone of modern communities."
   },
   {
-    icon: Zap,
-    title: "Digital Transformation",
-    description: "Complete digital transformation strategies to streamline processes and boost efficiency."
+    icon: PaintBucket,
+    title: "Interior & Finishing",
+    description: "Complete interior solutions from flooring to lighting, creating spaces that inspire and function."
   },
   {
-    icon: Shield,
-    title: "Cybersecurity",
-    description: "Comprehensive security solutions to protect your digital assets and ensure business continuity."
+    icon: Wrench,
+    title: "Maintenance & Repair",
+    description: "Ongoing maintenance services to keep your properties in optimal condition year-round."
   }
 ];
 
@@ -50,7 +50,7 @@ const Services = () => {
             Our Services
           </h2>
           <p className="text-xl text-konet-gray max-w-2xl mx-auto">
-            We provide comprehensive technology solutions to transform your business and achieve your digital goals.
+            We provide comprehensive construction solutions to build your vision and create lasting structures.
           </p>
         </div>
         
