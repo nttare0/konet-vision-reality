@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Twitter, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -19,6 +19,17 @@ const Footer = () => {
             <p className="text-white/80 mb-4 max-w-md">
               Transforming architectural visions into exceptional structures. Your trusted construction partner for building dreams into reality.
             </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-white/60 hover:text-konet-electric transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-white/60 hover:text-konet-electric transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-white/60 hover:text-konet-electric transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
           </div>
           
           {/* Quick Links */}
