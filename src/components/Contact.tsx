@@ -39,7 +39,7 @@ const Contact = () => {
     const whatsappMessage = `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Subject:* ${formData.subject}\n*Message:* ${formData.message}`;
     
     // WhatsApp number (removing + and spaces)
-    const whatsappNumber = "250790824205";
+    const whatsappNumber = "250786043756";
     
     // Create WhatsApp URL
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
