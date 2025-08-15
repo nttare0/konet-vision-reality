@@ -20,7 +20,12 @@ const Hero = () => {
             </span>{" "}
             Into Reality
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">We aspire to be the contractor of choice in the markets we serve and beyond, building award-winning projects that are best-in-class and a source of pride for our clients, partners and employees.</p>
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-amber-200">Our Vision
+Committed to being the contractor of choice, delivering best-in-class, award-winning work.
+
+
+
+        </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button variant="hero" size="xl" className="group">
