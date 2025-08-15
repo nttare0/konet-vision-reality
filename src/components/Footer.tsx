@@ -80,9 +80,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
-          <p className="text-white/60">
-            © 2024 KONET. All rights reserved. Turning Vision Into Reality.
-          </p>
+          <p className="text-white/60">© 2025 KONET. All rights reserved. Turning Vision Into Reality.</p>
         </div>
       </div>
     </footer>;
