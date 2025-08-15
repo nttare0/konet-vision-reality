@@ -2,9 +2,65 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Format message for WhatsApp
+    const whatsappMessage = `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Subject:* ${formData.subject}\n*Message:* ${formData.message}`;
+    
+    // WhatsApp number (removing + and spaces)
+    const whatsappNumber = "250790824205";
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+    
+    toast({
+      title: "Success",
+      description: "Redirecting to WhatsApp to send your message",
+    });
+  };
+
   return (
     <section id="contact" className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-4">
@@ -64,30 +120,50 @@ const Contact = () => {
                 <CardTitle className="text-white text-2xl">Send us a message</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input 
-                    placeholder="Your Name" 
-                    className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:border-konet-electric"
-                  />
-                  <Input 
-                    placeholder="Your Email" 
-                    type="email"
-                    className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:border-konet-electric"
-                  />
-                </div>
-                <Input 
-                  placeholder="Subject" 
-                  className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:border-konet-electric"
-                />
-                <Textarea 
-                  placeholder="Your Message" 
-                  rows={6}
-                  className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:border-konet-electric resize-none"
-                />
-                <Button variant="hero" size="lg" className="w-full">
-                  <Send className="w-5 h-5 mr-2" />
-                  Send Message
-                </Button>
+                <form onSubmit={handleSubmit}>
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <Input 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Your Name" 
+                        className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:border-konet-electric"
+                        required
+                      />
+                      <Input 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="Your Email" 
+                        type="email"
+                        className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:border-konet-electric"
+                        required
+                      />
+                    </div>
+                    <Input 
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      placeholder="Subject" 
+                      className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:border-konet-electric"
+                      required
+                    />
+                    <Textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Your Message" 
+                      rows={6}
+                      className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:border-konet-electric resize-none"
+                      required
+                    />
+                    <Button type="submit" variant="hero" size="lg" className="w-full">
+                      <Send className="w-5 h-5 mr-2" />
+                      Send Message
+                    </Button>
+                  </div>
+                </form>
               </CardContent>
             </Card>
           </div>
