@@ -1,15 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
-
 const Hero = () => {
-  return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroImage})`
+    }}>
         <div className="absolute inset-0 bg-gradient-hero opacity-85"></div>
       </div>
       
@@ -23,9 +20,7 @@ const Hero = () => {
             </span>{" "}
             Into Reality
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Your trusted construction partner, transforming architectural visions into exceptional structures that stand the test of time.
-          </p>
+          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">We aspire to be the contractor of choice in the markets we serve and beyond, building award-winning projects that are best-in-class and a source of pride for our clients, partners and employees.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button variant="hero" size="xl" className="group">
@@ -40,8 +35,6 @@ const Hero = () => {
         </div>
         
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
