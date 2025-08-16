@@ -10,8 +10,8 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="w-10 h-10 flex items-center justify-center">
-            <img src="/lovable-uploads/1dfa864c-e1de-46b2-b464-be0f0ea2c80c.png" alt="KONET Logo" className="w-full h-full object-contain" />
+          <div className="w-14 h-14 flex items-center justify-center">
+            <img src="/lovable-uploads/1dfa864c-e1de-46b2-b464-be0f0ea2c80c.png" alt="KONET Logo" className="w-full h-full object-contain filter contrast-125 brightness-110" />
           </div>
           <div>
             <h1 className="text-xl font-bold text-konet-blue">KONET</h1>

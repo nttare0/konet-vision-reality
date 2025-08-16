@@ -74,13 +74,16 @@ const About = () => {
                 What Describes Us
               </h2>
               <p className="text-lg text-konet-gray mb-6">
-                At KONET, we believe every vision deserves to become reality. Founded on the principle of turning architectural dreams into exceptional structures, we've been at the forefront of construction innovation in Rwanda.
+                At Konet Construction, we build more than structures—we build the foundation of Rwanda's tomorrow. Our comprehensive construction services bring together decades of local expertise in civil works, materials supply, quarry operations, and landscape development.
               </p>
               <p className="text-lg text-konet-gray mb-6">
-                Our team of expert builders, engineers, and craftsmen work tirelessly to deliver projects that not only meet your current needs but stand strong for generations. We don't just build structures; we build legacies.
+                Whether constructing new homes, developing commercial spaces, building essential road networks, or preparing sites for future growth, we understand the unique challenges and opportunities within Rwanda's construction landscape. Our local quarry operations and materials supply ensure that every project benefits from the highest quality resources sourced right here at home.
+              </p>
+              <p className="text-lg text-konet-gray mb-6">
+                Our commitment extends beyond construction to environmental stewardship through professional landscaping and sustainable site development practices. From government infrastructure projects to private residential developments, we deliver solutions that strengthen communities and support Rwanda's vision for sustainable growth.
               </p>
               <p className="text-lg text-konet-gray mb-8">
-                With a commitment to quality, innovation, and customer satisfaction, KONET has established itself as Rwanda's trusted partner for comprehensive construction and design solutions.
+                Partner with Konet Construction and experience the difference that local expertise, integrated services, and genuine commitment to excellence can make in your next project.
               </p>
               <Button variant="primary" size="lg">
                 Learn More About Us
@@ -117,8 +120,89 @@ const About = () => {
         </div>
       </section>
 
-      {/* Locations Section */}
+      {/* Vision, Mission & Values Section */}
       <section className="py-20 bg-gradient-to-br from-background to-konet-light-blue">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold text-konet-blue mb-6">
+              Vision, Mission & Values
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {/* Vision */}
+            <Card className="group p-8 hover:shadow-elegant transition-all duration-300 border-0 bg-gradient-to-br from-background to-white animate-fade-in">
+              <CardContent className="p-0">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center mr-4">
+                    <Target className="w-6 h-6 text-konet-navy" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-konet-blue">🎯 VISION</h3>
+                </div>
+                <p className="text-konet-gray leading-relaxed">
+                  To be Rwanda's leading integrated construction company, recognized for building sustainable infrastructure that drives national development and transforms communities for generations to come.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Mission */}
+            <Card className="group p-8 hover:shadow-elegant transition-all duration-300 border-0 bg-gradient-to-br from-background to-white animate-fade-in" style={{ animationDelay: '100ms' }}>
+              <CardContent className="p-0">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center mr-4">
+                    <Lightbulb className="w-6 h-6 text-konet-navy" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-konet-blue">🚀 MISSION</h3>
+                </div>
+                <p className="text-konet-gray leading-relaxed">
+                  We deliver comprehensive construction solutions through our integrated services of civil works, materials supply, quarry operations, and landscaping, combining local expertise with international standards to build Rwanda's future while fostering economic growth, environmental sustainability, and community development.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Values */}
+            <Card className="group p-8 hover:shadow-elegant transition-all duration-300 border-0 bg-gradient-to-br from-background to-white animate-fade-in" style={{ animationDelay: '200ms' }}>
+              <CardContent className="p-0">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center mr-4">
+                    <Award className="w-6 h-6 text-konet-navy" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-konet-blue">💎 CORE VALUES</h3>
+                </div>
+                <div className="space-y-4 text-konet-gray">
+                  <div>
+                    <h4 className="font-semibold text-konet-blue mb-1">EXCELLENCE</h4>
+                    <p className="text-sm">We pursue the highest standards in every project, ensuring superior quality that exceeds expectations.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-konet-blue mb-1">INTEGRITY</h4>
+                    <p className="text-sm">We conduct business with honesty and transparency, building trust through reliable partnerships.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-konet-blue mb-1">INNOVATION</h4>
+                    <p className="text-sm">We embrace modern technologies while respecting traditional craftsmanship.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-konet-blue mb-1">COMMUNITY</h4>
+                    <p className="text-sm">We strengthen Rwandan communities through local employment and infrastructure development.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-konet-blue mb-1">SUSTAINABILITY</h4>
+                    <p className="text-sm">We protect natural resources through environmentally responsible practices.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-konet-blue mb-1">COLLABORATION</h4>
+                    <p className="text-sm">We work as integrated teams, fostering open communication and shared success.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Locations Section */}
+      <section className="py-20 bg-gradient-to-br from-konet-light-blue to-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-konet-blue mb-6">
