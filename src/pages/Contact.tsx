@@ -82,7 +82,7 @@ const Contact = () => {
             <Card className="group text-center p-6 hover:shadow-elegant transition-all duration-300 border-0 bg-gradient-to-br from-background to-konet-light-blue animate-fade-in">
               <CardContent className="p-0">
                 <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Phone className="w-6 h-6 text-konet-navy" />
+                  
                 </div>
                 <h3 className="text-xl font-bold text-konet-blue mb-2">Phone</h3>
                 <p className="text-konet-gray">+250 788 123 456</p>
