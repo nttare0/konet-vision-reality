@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import { ArrowRight, Settings, Zap, Shield, Sprout, Home, Wrench } from "lucide-react";
 import mechanicalHvac from "@/assets/mechanical-hvac.jpg";
 import engineeringDesign from "@/assets/engineering-design.jpg";
@@ -154,6 +155,7 @@ const Services = () => {
       </section>
       
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

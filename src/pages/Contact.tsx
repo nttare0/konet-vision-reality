@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import { Phone, Mail, MapPin, Clock, ArrowRight, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import contactHero from "@/assets/contact-hero.jpg";
@@ -111,7 +112,7 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-konet-navy" />
                 </div>
                 <h3 className="text-xl font-bold text-konet-blue mb-2">Address</h3>
-                <p className="text-konet-gray">KG 123 St, Kigali</p>
+                <p className="text-konet-gray">KK 31 Ave, Kigali</p>
                 <p className="text-konet-gray">Rwanda</p>
               </CardContent>
             </Card>
@@ -196,9 +197,9 @@ const Contact = () => {
               <h2 className="text-3xl font-bold text-konet-blue mb-6">Find Us Here</h2>
               <div className="group relative h-96 rounded-lg overflow-hidden shadow-elegant hover:shadow-2xl transition-all duration-300">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63829.11183928252!2d30.00617747910156!3d-1.9705789999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6bc33b69975%3A0xc1c3f3b7df90e7f3!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
-                  width="100%"
-                  height="100%"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.4694796566882!2d30.07378410853842!3d-1.9661160980078056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca70073ea9041%3A0x3586048b13c36b43!2sKONET%20vision%20to%20reality!5e0!3m2!1sen!2srw!4v1755384100743!5m2!1sen!2srw"
+                  width="600"
+                  height="450"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
@@ -234,6 +235,7 @@ const Contact = () => {
       </section>
       
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

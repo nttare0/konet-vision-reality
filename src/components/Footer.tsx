@@ -20,7 +20,7 @@ const Footer = () => {
               Transforming architectural visions into exceptional structures. Your trusted construction partner for building dreams into reality.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/60 hover:text-konet-electric transition-colors">
+              <a href="https://www.instagram.com/konet_2013/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-konet-electric transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="text-white/60 hover:text-konet-electric transition-colors">
@@ -37,22 +37,38 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-white/80 hover:text-konet-electric transition-colors">
+                <Link 
+                  to="/" 
+                  className="text-white/80 hover:text-konet-electric transition-colors"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-white/80 hover:text-konet-electric transition-colors">
+                <Link 
+                  to="/services" 
+                  className="text-white/80 hover:text-konet-electric transition-colors"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-white/80 hover:text-konet-electric transition-colors">
+                <Link 
+                  to="/about" 
+                  className="text-white/80 hover:text-konet-electric transition-colors"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-white/80 hover:text-konet-electric transition-colors">
+                <Link 
+                  to="/contact" 
+                  className="text-white/80 hover:text-konet-electric transition-colors"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
                   Contact
                 </Link>
               </li>
@@ -75,7 +91,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-konet-electric" />
-                <span className="text-white/80">Kigali, Rwanda</span>
+                <span className="text-white/80">KK 31 Ave, Kigali</span>
               </div>
             </div>
           </div>

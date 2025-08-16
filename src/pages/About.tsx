@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import { MapPin, ArrowRight, Target, Users, Award, Lightbulb } from "lucide-react";
 import { useCountUp } from "@/hooks/useCountUp";
 import aboutHero from "@/assets/about-hero.jpg";
@@ -181,6 +182,7 @@ const About = () => {
       </section>
       
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
