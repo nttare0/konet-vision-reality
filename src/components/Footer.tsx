@@ -1,4 +1,6 @@
 import { Phone, Mail, MapPin, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return <footer className="bg-konet-navy text-white py-12">
       <div className="container mx-auto px-4">
@@ -6,8 +8,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center">
-                <span className="text-konet-navy font-bold text-xl">K</span>
+              <div className="w-10 h-10 flex items-center justify-center">
+                <img src="/lovable-uploads/1dfa864c-e1de-46b2-b464-be0f0ea2c80c.png" alt="KONET Logo" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h1 className="text-xl font-bold">KONET</h1>
@@ -35,24 +37,24 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-white/80 hover:text-konet-electric transition-colors">
+                <Link to="/" className="text-white/80 hover:text-konet-electric transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-white/80 hover:text-konet-electric transition-colors">
+                <Link to="/services" className="text-white/80 hover:text-konet-electric transition-colors">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="text-white/80 hover:text-konet-electric transition-colors">
+                <Link to="/about" className="text-white/80 hover:text-konet-electric transition-colors">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-white/80 hover:text-konet-electric transition-colors">
+                <Link to="/contact" className="text-white/80 hover:text-konet-electric transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

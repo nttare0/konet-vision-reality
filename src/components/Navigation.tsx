@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -31,11 +34,62 @@ const Navigation = () => {
           </Link>
         </div>
         
-        <Button variant="hero" size="default" className="flex items-center gap-2">
-          <Phone className="w-4 h-4" />
-          Contact Us
-        </Button>
+        <div className="flex items-center gap-4">
+          <Button variant="hero" size="default" className="hidden sm:flex items-center gap-2">
+            <Phone className="w-4 h-4" />
+            Contact Us
+          </Button>
+          
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 text-foreground hover:text-konet-blue transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
+      
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-background/95 backdrop-blur-sm border-t border-border">
+          <div className="container mx-auto px-4 py-4 space-y-4">
+            <Link 
+              to="/" 
+              className="block text-foreground hover:text-konet-blue transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/services" 
+              className="block text-foreground hover:text-konet-blue transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </Link>
+            <Link 
+              to="/about" 
+              className="block text-foreground hover:text-konet-blue transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link 
+              to="/contact" 
+              className="block text-foreground hover:text-konet-blue transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            <Button variant="hero" size="default" className="w-full flex items-center justify-center gap-2 mt-4">
+              <Phone className="w-4 h-4" />
+              Contact Us
+            </Button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
