@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
@@ -16,18 +17,18 @@ const Navigation = () => {
         </div>
         
         <div className="hidden md:flex items-center space-x-8">
-          <a href="/" className="text-foreground hover:text-konet-blue transition-colors">
+          <Link to="/" className="text-foreground hover:text-konet-blue transition-colors">
             Home
-          </a>
-          <a href="/services" className="text-foreground hover:text-konet-blue transition-colors">
+          </Link>
+          <Link to="/services" className="text-foreground hover:text-konet-blue transition-colors">
             Services
-          </a>
-          <a href="/about" className="text-foreground hover:text-konet-blue transition-colors">
+          </Link>
+          <Link to="/about" className="text-foreground hover:text-konet-blue transition-colors">
             About
-          </a>
-          <a href="/contact" className="text-foreground hover:text-konet-blue transition-colors">
+          </Link>
+          <Link to="/contact" className="text-foreground hover:text-konet-blue transition-colors">
             Contact
-          </a>
+          </Link>
         </div>
         
         <Button variant="hero" size="default" className="flex items-center gap-2">
