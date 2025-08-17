@@ -94,7 +94,8 @@ const Contact = () => {
                 <CardTitle className="text-white">Email Us</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-white/90">info@konet.rw</p>
+                <p className="text-white/90">info@konet.rw
+ko</p>
               </CardContent>
             </Card>
             
@@ -106,7 +107,7 @@ const Contact = () => {
                 <CardTitle className="text-white">Visit Us</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-white/90">Kigali, Rwanda</p>
+                <p className="text-white/90">Kigali - Gikondo, Rwanda</p>
               </CardContent>
             </Card>
           </div>
