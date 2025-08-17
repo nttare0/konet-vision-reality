@@ -3,7 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import { ArrowRight, Settings, Zap, Shield, Sprout, Home, Wrench } from "lucide-react";
+import { ArrowRight, Settings, Zap, Shield, Sprout, Home, Wrench, Pickaxe } from "lucide-react";
+import { Link } from "react-router-dom";
 import mechanicalHvac from "@/assets/mechanical-hvac.jpg";
 import engineeringDesign from "@/assets/engineering-design.jpg";
 import electricalTech from "@/assets/electrical-tech.jpg";
@@ -61,6 +62,13 @@ const services = [
     description: "Transform your spaces with modern interior design and professional renovation services.",
     image: interiorRenovation,
     features: ["Space Planning", "Modern Interiors", "Kitchen & Bath Remodeling", "Custom Solutions"]
+  },
+  {
+    icon: Pickaxe,
+    title: "Mining Operations",
+    description: "Professional mining and quarry operations with sustainable practices and modern equipment for material extraction.",
+    image: mechanicalHvac, // Using existing image as placeholder
+    features: ["Quarry Operations", "Material Extraction", "Equipment Services", "Sustainable Mining"]
   }
 ];
 
@@ -122,10 +130,12 @@ const Services = () => {
                     ))}
                   </ul>
                   
-                  <Button variant="primary" className="w-full group-hover:bg-konet-navy transition-colors">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                  <Link to="/contact">
+                    <Button variant="primary" className="w-full group-hover:bg-konet-navy transition-colors">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -146,10 +156,12 @@ const Services = () => {
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
               Ready to turn your home dreams into reality? Our expert team is here to guide you through every step of the process, ensuring a seamless and enjoyable experience. Contact us today to start planning your next project.
             </p>
-            <Button variant="secondary" size="lg" className="bg-white text-konet-navy hover:bg-konet-light-blue hover:text-white">
-              Get Started Now
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            <Link to="/contact">
+              <Button variant="secondary" size="lg" className="bg-white text-konet-navy hover:bg-konet-light-blue hover:text-white">
+                Get Started Now
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

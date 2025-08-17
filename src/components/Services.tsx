@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, Hammer, HardHat, Truck, PaintBucket, Wrench } from "lucide-react";
+import { Building2, Hammer, HardHat, Truck, PaintBucket, Wrench, Pickaxe } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
 const services = [{
   icon: Building2,
   title: "Residential Construction",
@@ -24,11 +25,35 @@ const services = [{
   icon: Wrench,
   title: "Maintenance & Repair",
   description: "Ongoing maintenance services to keep your properties in optimal condition year-round."
+}, {
+  icon: Pickaxe,
+  title: "Mining",
+  description: "Professional mining operations and mineral extraction services with sustainable practices and modern equipment."
 }];
 const Services = () => {
-  return <section id="services" className="py-20 bg-konet-light-blue">
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return <section ref={ref} id="services" className="py-20 bg-konet-light-blue">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-konet-blue mb-4">What We Build</h2>
           <p className="text-xl text-konet-gray max-w-2xl mx-auto">
             We provide comprehensive construction solutions to build your vision and create lasting structures.
@@ -36,7 +61,13 @@ const Services = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => <Card key={index} className="group hover:shadow-elegant transition-all duration-300 border-0 bg-background">
+          {services.map((service, index) => <Card 
+            key={index} 
+            className={`group hover:shadow-elegant transition-all duration-500 border-0 bg-background transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+            style={{ transitionDelay: `${index * 150}ms` }}
+          >
               <CardHeader className="text-center">
                 <div className="w-16 h-16 bg-gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-8 h-8 text-konet-navy" />
