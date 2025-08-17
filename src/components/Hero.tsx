@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 const Hero = () => {
   return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -33,8 +33,8 @@ Committed to being the contractor of choice, delivering best-in-class, award-win
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="outline" size="xl" className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm">
-              <Play className="w-5 h-5" />
-              Watch Demo
+              <Phone className="w-5 h-5" />
+              Contact Us
             </Button>
           </div>
         </div>

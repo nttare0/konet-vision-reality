@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Phone, Mail, MapPin, Clock, ArrowRight, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowRight, Send, Package } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import contactHero from "@/assets/contact-hero.jpg";
 const Contact = () => {
@@ -19,6 +19,7 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -39,19 +40,29 @@ const Contact = () => {
       });
       return;
     }
-    const whatsappMessage = `Hello KONET!%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0ASubject: ${formData.subject}%0A%0AMessage:%0A${formData.message}`;
-    const whatsappUrl = `https://wa.me/250788123456?text=${whatsappMessage}`;
-    window.open(whatsappUrl, '_blank');
-    toast({
-      title: "Message sent!",
-      description: "Your message has been sent via WhatsApp."
-    });
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: ""
-    });
+    
+    setIsSubmitting(true);
+    
+    // Trigger flying animation
+    setTimeout(() => {
+      const whatsappMessage = `Hello KONET!%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0ASubject: ${formData.subject}%0A%0AMessage:%0A${formData.message}`;
+      const whatsappUrl = `https://wa.me/250788123456?text=${whatsappMessage}`;
+      window.open(whatsappUrl, '_blank');
+      
+      toast({
+        title: "Message sent!",
+        description: "Your message has been sent via WhatsApp."
+      });
+      
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+      
+      setIsSubmitting(false);
+    }, 1000);
   };
   return <div className="min-h-screen">
       <Navigation />
@@ -81,9 +92,9 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <Card className="group text-center p-6 hover:shadow-elegant transition-all duration-300 border-0 bg-gradient-to-br from-background to-konet-light-blue animate-fade-in">
               <CardContent className="p-0">
-                <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  
-                </div>
+                 <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                   <Phone className="w-6 h-6 text-konet-navy" />
+                 </div>
                 <h3 className="text-xl font-bold text-konet-blue mb-2">Phone</h3>
                 <p className="text-konet-gray">+250 788 123 456</p>
                 <p className="text-konet-gray">+250 786 043 756</p>
@@ -157,10 +168,26 @@ const Contact = () => {
                   <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell us about your project..." className="mt-1 min-h-32" />
                 </div>
                 
-                <Button type="submit" variant="primary" size="lg" className="w-full">
-                  <Send className="w-5 h-5 mr-2" />
-                  Send Message
-                </Button>
+                <div className="relative">
+                  <Button type="submit" variant="primary" size="lg" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <>
+                        <Package className="w-5 h-5 mr-2 animate-bounce" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5 mr-2" />
+                        Send Message
+                      </>
+                    )}
+                  </Button>
+                  {isSubmitting && (
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 pointer-events-none">
+                      <Package className="w-8 h-8 text-konet-blue animate-[fly-away_1s_ease-out_forwards]" />
+                    </div>
+                  )}
+                </div>
               </form>
             </div>
 
@@ -170,7 +197,7 @@ const Contact = () => {
           }}>
               <h2 className="text-3xl font-bold text-konet-blue mb-6">Find Us Here</h2>
               <div className="group relative h-96 rounded-lg overflow-hidden shadow-elegant hover:shadow-2xl transition-all duration-300">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63829.11183928252!2d30.00617747910156!3d-1.9705789999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6bc33b69975%3A0xc1c3f3b7df90e7f3!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus" width="100%" height="100%" style={{
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.4694796566882!2d30.073784108538426!3d-1.9661160980077905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca70073ea9041%3A0x3586048b13c36b43!2sKONET%20vision%20to%20reality!5e0!3m2!1sen!2srw!4v1755463456271!5m2!1sen!2srw" width="100%" height="100%" style={{
                 border: 0
               }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="group-hover:scale-105 transition-transform duration-300"></iframe>
                 <div className="absolute inset-0 bg-gradient-to-t from-konet-navy/20 to-transparent pointer-events-none group-hover:from-konet-navy/30 transition-all duration-300" />

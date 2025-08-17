@@ -16,6 +16,7 @@ const Navigation = () => {
           <div>
             <h1 className="text-xl font-bold text-konet-blue">KONET</h1>
             <p className="text-xs text-konet-gray">Vision to Reality</p>
+            <p className="text-xs text-konet-gray/80 italic">Building Rwanda's tomorrow with purpose, precision, and pride.</p>
           </div>
         </div>
         
