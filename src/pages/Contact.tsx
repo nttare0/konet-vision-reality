@@ -64,14 +64,14 @@ const Contact = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 overflow-hidden">
+      <section className="relative pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0">
           <img src={contactHero} alt="Contact KONET" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-konet-navy/90 to-konet-blue/80" />
         </div>
         
         <div className="relative container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
+          <div className="max-w-4xl mx-auto text-center animate-bounce-in">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Contact Us
             </h1>

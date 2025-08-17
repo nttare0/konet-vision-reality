@@ -12,6 +12,7 @@ import commissioning from "@/assets/commissioning.jpg";
 import fireProtection from "@/assets/fire-protection.jpg";
 import landscaping from "@/assets/landscaping.jpg";
 import interiorRenovation from "@/assets/interior-renovation.jpg";
+import miningOperations from "@/assets/mining-operations.jpg";
 
 const services = [
   {
@@ -67,7 +68,7 @@ const services = [
     icon: Pickaxe,
     title: "Mining Operations",
     description: "Professional mining and quarry operations with sustainable practices and modern equipment for material extraction.",
-    image: mechanicalHvac, // Using existing image as placeholder
+    image: miningOperations,
     features: ["Quarry Operations", "Material Extraction", "Equipment Services", "Sustainable Mining"]
   }
 ];
@@ -78,9 +79,9 @@ const Services = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-background to-konet-light-blue">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-background to-konet-light-blue">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto animate-fade-in">
+          <div className="text-center max-w-4xl mx-auto animate-bounce-in">
             <h1 className="text-5xl md:text-6xl font-bold text-konet-blue mb-6">
               Our Services
             </h1>

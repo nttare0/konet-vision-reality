@@ -10,10 +10,18 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <Hero />
-      <Services />
-      <About />
-      <Contact />
+      <div className="animate-bounce-in">
+        <Hero />
+      </div>
+      <div className="animate-fade-in" style={{ animationDelay: '300ms' }}>
+        <Services />
+      </div>
+      <div className="animate-fade-in" style={{ animationDelay: '600ms' }}>
+        <About />
+      </div>
+      <div className="animate-fade-in" style={{ animationDelay: '900ms' }}>
+        <Contact />
+      </div>
       <Footer />
       <ScrollToTop />
     </div>

@@ -8,7 +8,7 @@ const Navigation = () => {
   
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <div className="w-14 h-14 flex items-center justify-center">
             <img src="/lovable-uploads/1dfa864c-e1de-46b2-b464-be0f0ea2c80c.png" alt="KONET Logo" className="w-full h-full object-contain filter contrast-125 brightness-110" />
@@ -54,37 +54,41 @@ const Navigation = () => {
       
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-sm border-t border-border">
-          <div className="container mx-auto px-4 py-4 space-y-4">
+        <div className="md:hidden bg-background/95 backdrop-blur-sm border-t border-border animate-slide-down">
+          <div className="container mx-auto px-4 py-4 space-y-2">
             <Link 
               to="/" 
-              className="block text-foreground hover:text-konet-blue transition-colors py-2"
+              className="block text-foreground hover:text-konet-blue transition-all duration-300 py-3 px-4 rounded-lg hover:bg-konet-light-blue transform hover:translate-x-2 animate-slide-in-left"
               onClick={() => setIsMenuOpen(false)}
+              style={{ animationDelay: '100ms' }}
             >
               Home
             </Link>
             <Link 
               to="/services" 
-              className="block text-foreground hover:text-konet-blue transition-colors py-2"
+              className="block text-foreground hover:text-konet-blue transition-all duration-300 py-3 px-4 rounded-lg hover:bg-konet-light-blue transform hover:translate-x-2 animate-slide-in-left"
               onClick={() => setIsMenuOpen(false)}
+              style={{ animationDelay: '200ms' }}
             >
               Services
             </Link>
             <Link 
               to="/about" 
-              className="block text-foreground hover:text-konet-blue transition-colors py-2"
+              className="block text-foreground hover:text-konet-blue transition-all duration-300 py-3 px-4 rounded-lg hover:bg-konet-light-blue transform hover:translate-x-2 animate-slide-in-left"
               onClick={() => setIsMenuOpen(false)}
+              style={{ animationDelay: '300ms' }}
             >
               About
             </Link>
             <Link 
               to="/contact" 
-              className="block text-foreground hover:text-konet-blue transition-colors py-2"
+              className="block text-foreground hover:text-konet-blue transition-all duration-300 py-3 px-4 rounded-lg hover:bg-konet-light-blue transform hover:translate-x-2 animate-slide-in-left"
               onClick={() => setIsMenuOpen(false)}
+              style={{ animationDelay: '400ms' }}
             >
               Contact
             </Link>
-            <Button variant="hero" size="default" className="w-full flex items-center justify-center gap-2 mt-4">
+            <Button variant="hero" size="default" className="w-full flex items-center justify-center gap-2 mt-4 animate-slide-in-left" style={{ animationDelay: '500ms' }}>
               <Phone className="w-4 h-4" />
               Contact Us
             </Button>
