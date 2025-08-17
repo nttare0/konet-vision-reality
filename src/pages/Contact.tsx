@@ -40,27 +40,23 @@ const Contact = () => {
       });
       return;
     }
-    
     setIsSubmitting(true);
-    
+
     // Trigger flying animation
     setTimeout(() => {
       const whatsappMessage = `Hello KONET!%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0ASubject: ${formData.subject}%0A%0AMessage:%0A${formData.message}`;
       const whatsappUrl = `https://wa.me/250788123456?text=${whatsappMessage}`;
       window.open(whatsappUrl, '_blank');
-      
       toast({
         title: "Message sent!",
         description: "Your message has been sent via WhatsApp."
       });
-      
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: ""
       });
-      
       setIsSubmitting(false);
     }, 1000);
   };
@@ -96,8 +92,8 @@ const Contact = () => {
                    <Phone className="w-6 h-6 text-konet-navy" />
                  </div>
                 <h3 className="text-xl font-bold text-konet-blue mb-2">Phone</h3>
-                <p className="text-konet-gray">+250 788 123 456</p>
                 <p className="text-konet-gray">+250 786 043 756</p>
+                
               </CardContent>
             </Card>
 
@@ -109,8 +105,8 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-konet-navy" />
                 </div>
                 <h3 className="text-xl font-bold text-konet-blue mb-2">Email</h3>
-                <p className="text-konet-gray">info@konet.rw</p>
-                <p className="text-konet-gray">projects@konet.rw</p>
+                <p className="text-konet-gray">info@konet.com</p>
+                <p className="text-konet-gray">koneteng.tech2013@gmail.com</p>
               </CardContent>
             </Card>
 
@@ -122,7 +118,7 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-konet-navy" />
                 </div>
                 <h3 className="text-xl font-bold text-konet-blue mb-2">Address</h3>
-                <p className="text-konet-gray">KG 123 St, Kigali</p>
+                <p className="text-konet-gray">KK 31 Ave, Kigali</p>
                 <p className="text-konet-gray">Rwanda</p>
               </CardContent>
             </Card>
@@ -135,8 +131,8 @@ const Contact = () => {
                   <Clock className="w-6 h-6 text-konet-navy" />
                 </div>
                 <h3 className="text-xl font-bold text-konet-blue mb-2">Working Hours</h3>
-                <p className="text-konet-gray">Mon - Fri: 8:00 - 18:00</p>
-                <p className="text-konet-gray">Sat: 9:00 - 15:00</p>
+                <p className="text-konet-gray">Mon - Fri: 8:00 - 21:00</p>
+                <p className="text-konet-gray">Sun: 9:00 - 15:00</p>
               </CardContent>
             </Card>
           </div>
@@ -170,23 +166,17 @@ const Contact = () => {
                 
                 <div className="relative">
                   <Button type="submit" variant="primary" size="lg" className="w-full" disabled={isSubmitting}>
-                    {isSubmitting ? (
-                      <>
+                    {isSubmitting ? <>
                         <Package className="w-5 h-5 mr-2 animate-bounce" />
                         Sending...
-                      </>
-                    ) : (
-                      <>
+                      </> : <>
                         <Send className="w-5 h-5 mr-2" />
                         Send Message
-                      </>
-                    )}
+                      </>}
                   </Button>
-                  {isSubmitting && (
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 pointer-events-none">
+                  {isSubmitting && <div className="absolute top-0 left-1/2 transform -translate-x-1/2 pointer-events-none">
                       <Package className="w-8 h-8 text-konet-blue animate-[fly-away_1s_ease-out_forwards]" />
-                    </div>
-                  )}
+                    </div>}
                 </div>
               </form>
             </div>
