@@ -6,6 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { MapPin, ArrowRight, Target, Users, Award, Lightbulb } from "lucide-react";
 import { useCountUp } from "@/hooks/useCountUp";
 import aboutHero from "@/assets/about-hero.jpg";
+import buildingsBackground from "@/assets/buildings-background.jpg";
 
 const stats = [
   { icon: Users, value: 500, suffix: "+", label: "Happy Clients" },
@@ -245,8 +246,10 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-konet-blue to-konet-navy">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-20 bg-gradient-to-r from-konet-blue to-konet-navy overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{backgroundImage: `url(${buildingsBackground})`}}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-konet-blue/80 to-konet-navy/80"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-3xl mx-auto animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               LET'S WORK TOGETHER
