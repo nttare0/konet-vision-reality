@@ -10,6 +10,7 @@ import { Phone, Mail, MapPin, Clock, ArrowRight, Send, Package } from "lucide-re
 import { useToast } from "@/hooks/use-toast";
 import contactHero from "@/assets/contact-hero.jpg";
 import buildingsBackground from "@/assets/buildings-background.jpg";
+import emailjs from '@emailjs/browser';
 const Contact = () => {
   const {
     toast
@@ -31,7 +32,7 @@ const Contact = () => {
       [name]: value
     }));
   };
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       toast({
@@ -43,23 +44,42 @@ const Contact = () => {
     }
     setIsSubmitting(true);
 
-    // Trigger flying animation
-    setTimeout(() => {
-      const whatsappMessage = `Hello KONET!%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0ASubject: ${formData.subject}%0A%0AMessage:%0A${formData.message}`;
-      const whatsappUrl = `https://wa.me/250788123456?text=${whatsappMessage}`;
-      window.open(whatsappUrl, '_blank');
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'koneteng.tech2013@gmail.com'
+      };
+
+      await emailjs.send(
+        'service_konet_contact', // You'll need to set this up in EmailJS
+        'template_konet_form',   // You'll need to set this up in EmailJS
+        templateParams,
+        'your_public_key'        // You'll need to add your EmailJS public key
+      );
+
       toast({
         title: "Message sent!",
-        description: "Your message has been sent via WhatsApp."
+        description: "Your message has been sent successfully to koneteng.tech2013@gmail.com"
       });
+      
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: ""
       });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
   return <div className="min-h-screen">
       <Navigation />
@@ -200,7 +220,7 @@ const Contact = () => {
 
       {/* CTA Section */}
       <section className="relative py-20 bg-gradient-to-r from-konet-blue to-konet-navy overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{backgroundImage: `url(${buildingsBackground})`}}></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40" style={{backgroundImage: `url(${buildingsBackground})`}}></div>
         <div className="absolute inset-0 bg-gradient-to-r from-konet-blue/80 to-konet-navy/80"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-3xl mx-auto animate-fade-in">
